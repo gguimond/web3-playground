@@ -16,7 +16,7 @@ myContract.methods
     console.log(jsonRpcResult)
   })
   document.getElementById('incr').addEventListener('click', (function () {
-  myContract.methods.incr().send({ from: '0xc95318c792aF015cE0bCc07eB1956780850A64a9' }, function () {
+  myContract.methods.incr().send({ from: window.currentAccount }, function () {
     myContract.methods.display().call((error, result) => {
       htmlLabel.innerHTML = result
       console.log(result)
@@ -24,7 +24,7 @@ myContract.methods
   })
 }))
 document.getElementById('decr').addEventListener('click', (function () {
-  myContract.methods.decr().send({ from: '0xc95318c792aF015cE0bCc07eB1956780850A64a9' }, function () {
+  myContract.methods.decr().send({ from: window.currentAccount }, function () {
     myContract.methods.display().call((error, result) => {
       htmlLabel.innerHTML = result
       console.log(result)
